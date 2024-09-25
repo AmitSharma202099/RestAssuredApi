@@ -2,14 +2,6 @@ package FakeUserAPITests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import FakeUserAPITests.FakeUser.Address;
-import FakeUserAPITests.FakeUser.Address.AddressBuilder;
-import FakeUserAPITests.FakeUser.Address.Geolocation;
-import FakeUserAPITests.FakeUser.Address.Geolocation.GeolocationBuilder;
-import FakeUserAPITests.FakeUser.FakeUserBuilder;
-import FakeUserAPITests.FakeUser.Name;
-
 import static io.restassured.RestAssured.given;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -58,28 +50,30 @@ public class UpdateUserFakeAPITest {
 					.longitude("98.1496")
 					.build();
 			
-			Address address = new FakeUser.Address.AddressBuilder()
+			//FakeUser.Address address = new FakeUser.Address.AddressBuilder()
+			FakeUser.Address address = new FakeUser.Address.AddressBuilder()
 					.city("Banglore")
-					.street("Thubarhalli")
-					.number(10)
-					.zipcode("560066")
-					.geolocation(geolocation);
+						.street("Thubarhalli")
+							.number(10)
+								.zipcode("560066")
+									.geolocation(geolocation)
+										.build();
 						
 			
 			//FakeUser.Name name = new FakeUser.Name().builder()
 			FakeUser.Name name = new FakeUser.Name.NameBuilder()
 					.firstname("Saumya")
-					.lastname("Mishra")
-					.build();
+						.lastname("Mishra")
+							.build();
 			
 			FakeUser user = new FakeUser.FakeUserBuilder()
 					.email("Saumya@gmail.com")
-					.username("Saumya")
-					.password("password123")
-					.phone("9999888810")
-					.name(name)
-					.address(address)
-					.build();
+						.username("Saumya")
+							.password("password123")
+								.phone("9999888810")
+									.name(name)
+										.address(address)
+											.build();
 					
 		
 		int id=	given().log().all()

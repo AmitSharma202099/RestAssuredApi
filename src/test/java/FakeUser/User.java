@@ -1,4 +1,6 @@
-package FakeUserAPITests;
+package FakeUser;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,14 +11,16 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class FakeUser {
-	
+public class User {
+
 	private String email;
 	private String username;
 	private String password;
 	private String phone;
 	private Name name;
 	private Address address;
+	
+
 	@Data
 	@Builder
 	@NoArgsConstructor
@@ -25,7 +29,7 @@ public class FakeUser {
 		private String firstname;
 		private String lastname;
 	}
-	
+
 	@Data
 	@Builder
 	@NoArgsConstructor
@@ -35,16 +39,18 @@ public class FakeUser {
 		private String street;
 		private int number;
 		private String zipcode;
-		private Geolocation geolocation;  // imp to create class ref
-		
+		private GeoLocation geoLocation;
+
 		@Data
 		@Builder
 		@NoArgsConstructor
 		@AllArgsConstructor
-		public static class Geolocation {
+		public static class GeoLocation {
 			private String lat;
+			@JsonProperty("long")
 			private String longitude;
 		}
+
 	}
-	
+
 }
