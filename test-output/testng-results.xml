@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-09-26T04:24:04 IST" name="Default suite" finished-at="2024-09-26T04:24:08 IST" duration-ms="3656">
+    <groups>
+    </groups>
+    <test started-at="2024-09-26T04:24:04 IST" name="Default test" finished-at="2024-09-26T04:24:08 IST" duration-ms="3656">
+      <class name="FakeUserAPITests.UpdateUserFakeAPITest">
+        <test-method signature="createUserTest_LombokBuilder()[pri:0, instance:FakeUserAPITests.UpdateUserFakeAPITest@6d4d66d2]" started-at="2024-09-26T04:24:04 IST" name="createUserTest_LombokBuilder" finished-at="2024-09-26T04:24:07 IST" duration-ms="2960" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUserTest_LombokBuilder -->
+        <test-method signature="createUserTest_LombokPOJO()[pri:0, instance:FakeUserAPITests.UpdateUserFakeAPITest@6d4d66d2]" started-at="2024-09-26T04:24:07 IST" name="createUserTest_LombokPOJO" finished-at="2024-09-26T04:24:08 IST" duration-ms="643" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUserTest_LombokPOJO -->
+      </class> <!-- FakeUserAPITests.UpdateUserFakeAPITest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
