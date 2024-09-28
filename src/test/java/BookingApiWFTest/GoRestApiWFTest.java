@@ -58,10 +58,10 @@ public class GoRestApiWFTest {
 						.post("/public/v2/users/")
 							.then()
 								.extract()
-									.path("user_id");
+									.path("newUserId");
 		
 		System.out.println("User id Created is :" + id);
-		return user_id;
+		return id;
 	}
 	
 	
@@ -69,9 +69,9 @@ public void verifyBookingId(int newUserId) {
 	RestAssured.baseURI = "https://gorest.co.in";
 		//get the same booking id: GET
 		given()
-			.pathParam("bookingId", newBookingId)
+			.pathParam("bookingId", newUserId)
 				.when().log().all()
-					.get("/public/v2/users/{user_id}")
+					.get("/public/v2/users/{newUserId}")
 						.then().log().all()
 							.assertThat()
 								.statusCode(200);
@@ -81,7 +81,7 @@ public void verifyBookingId(int newUserId) {
 	@Test
 	public void createUserIdTest() {
 		//Create a new userId : POST
-		int newuser_id = createUserId();
+		int newUserId = createUserId();
 		
 		
 		
